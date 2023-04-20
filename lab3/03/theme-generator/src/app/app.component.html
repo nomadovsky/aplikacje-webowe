@@ -1,0 +1,81 @@
+<div>
+  <div [ngClass]="'row'">
+    <div>
+      <h3>Formatowanie</h3>
+      <div [ngClass]="'input-wrapper'">
+        <label>Kolor: </label>
+        <input type="text" [(ngModel)]="color" />
+      </div>
+      <div [ngClass]="'input-wrapper'">
+        <label>Kolor tła: </label>
+        <input type="text" [(ngModel)]="bgColor" />
+      </div>
+      <div [ngClass]="'input-wrapper'">
+        <label>Obramowanie: </label>
+        <input type="text" [(ngModel)]="border" />
+      </div>
+      <div [ngClass]="'input-wrapper'">
+        <label>Cień: </label>
+        <input type="text" [(ngModel)]="shadow" />
+      </div>
+    </div>
+    <div>
+      <h3>Podgląd formatowania</h3>
+      <button
+        style="margin-right: 10px"
+        [style.color]="color"
+        [style.backgroundColor]="bgColor"
+        [style.border]="border"
+        [style.boxShadow]="shadow"
+      >
+        Przycisk
+      </button>
+      <input
+        type="text"
+        [style.backgroundColor]="bgColor"
+        [style.border]="border"
+        [style.boxShadow]="shadow"
+        style="padding: 5px"
+        [style.color]="color"
+        placeholder="Pole tekstowe"
+      />
+      <div
+        [style.color]="color"
+        [style.backgroundColor]="bgColor"
+        [style.border]="border"
+        [style.boxShadow]="shadow"
+        style="padding: 10px"
+      >
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur eos
+        officia autem laboriosam minima pariatur fugiat quos totam tempore
+        nesciunt vero itaque, necessitatibus vitae eveniet quae? Eaque
+        distinctio illo natus.
+      </div>
+    </div>
+  </div>
+
+  <div ngClass="'css-output'">
+    <h3>Wygenerowany CSS:</h3>
+    <pre>
+    button &#123;
+      color: {{ color }};
+      background-color: {{ bgColor }};
+      border: {{ border }};
+      box-shadow: {{ shadow }};
+    &#125;
+    input[type="text"] &#123;
+      color: {{ color }};
+      background-color: {{ bgColor }};
+      border: {{ border }};
+      box-shadow: {{ shadow }};
+    &#125;
+    div &#123;
+      color: {{ color }};
+      background-color: {{ bgColor }};
+      border: {{ border }};
+      box-shadow: {{ shadow }};
+    &#125;
+  </pre
+    >
+  </div>
+</div>

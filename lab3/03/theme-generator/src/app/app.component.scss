@@ -1,0 +1,13 @@
+.row {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 1em;
+}
+
+.input-wrapper {
+  padding-top: 0.5em;
+}
+
+h3 {
+  color: orangered;
+}
