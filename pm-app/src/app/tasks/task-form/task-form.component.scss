@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+form mat-form-field {
+  margin: 10px 0;
+}
+
+button {
+  align-self: flex-end;
+  margin: 20px 0;
+}
+
+textarea {
+  min-height: 50px;
+  resize: none;
+}

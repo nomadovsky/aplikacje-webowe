@@ -1,0 +1,61 @@
+<div class="button-container">
+  <button type="button" (click)="openDialog()" mat-fab extended color="accent">
+    <mat-icon>add_circle</mat-icon>
+    Add Feature
+  </button>
+</div>
+<div class="features-container">
+  <mat-expansion-panel hideToggle *ngFor="let feature of features">
+    <mat-expansion-panel-header class="header">
+      <button
+        type="button"
+        mat-button
+        (click)="editFeature(feature.id)"
+        color="primary"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        mat-button
+        (click)="deleteFeature(feature.id)"
+        color="warn"
+      >
+        Delete
+      </button>
+      <mat-panel-title class="title"> {{ feature.name }} </mat-panel-title>
+      <mat-panel-description class="description">
+        {{ feature.description }}
+      </mat-panel-description>
+      <mat-panel-description>
+        <b>{{ feature.state.toUpperCase() }}</b>
+      </mat-panel-description>
+      <mat-panel-description>
+        <b>{{ feature.priority.toUpperCase() }}</b>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h3 class="mat-h3" *ngIf="feature && feature.taskIds.length === 0">
+      No task added yet
+    </h3>
+    <mat-list *ngIf="feature && feature.taskIds.length > 0">
+      <p>Tasks:</p>
+      <mat-list-item
+        class="list-container"
+        *ngFor="let taskId of feature.taskIds"
+      >
+        <span matListItemTitle
+          ><strong>Name: </strong
+          >{{ getTask(taskId)?.name?.toUpperCase() }}</span
+        >
+        <span matListItemLine
+          ><strong>State:</strong>
+          {{ getTask(taskId)?.state?.toUpperCase() }}</span
+        >
+        <span matListItemLine
+          ><strong>Priority:</strong>
+          {{ getTask(taskId)?.priority?.toUpperCase() }}</span
+        >
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+</div>

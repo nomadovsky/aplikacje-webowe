@@ -1,0 +1,9 @@
+.kanban-item-container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+}

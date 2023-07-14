@@ -1,0 +1,29 @@
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px;
+}
+
+.kanban-column {
+  width: 30%;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-list {
+  border: solid 1px #ccc;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+.kanban-item {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: #fff;
+}

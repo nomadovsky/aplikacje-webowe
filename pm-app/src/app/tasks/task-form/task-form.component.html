@@ -1,0 +1,48 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <button type="button" mat-mini-fab color="primary" (click)="closeDialog()">
+    <mat-icon>clear</mat-icon>
+  </button>
+
+  <mat-form-field>
+    <input matInput placeholder="Task Name" formControlName="taskName" />
+    <mat-error *ngIf="taskForm.get('taskName')?.hasError('required')"
+      >Task name is required</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matInput
+      maxlength="150"
+      placeholder="Description"
+      formControlName="description"
+    ></textarea>
+    <mat-error *ngIf="taskForm.get('description')?.hasError('required')"
+      >Description is required</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Priority" formControlName="priority">
+      <mat-option
+        *ngFor="let option of ['low', 'medium', 'high']"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Feature" formControlName="featureId">
+      <mat-option *ngFor="let item of features" [value]="item.id">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="User" formControlName="user">
+      <mat-option *ngFor="let item of users" [value]="item">
+        {{ item.username }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Create task</button>
+</form>

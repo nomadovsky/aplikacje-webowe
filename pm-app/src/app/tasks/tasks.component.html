@@ -1,0 +1,7 @@
+<div class="button-container">
+  <button (click)="openDialog()" mat-fab extended color="accent">
+    <mat-icon>add_circle</mat-icon>
+    Add task
+  </button>
+</div>
+<app-kanban-board [dataItems]="tasks"></app-kanban-board>

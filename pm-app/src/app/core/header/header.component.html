@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-select placeholder="Projects" style="width: 100px">
+    <mat-option *ngFor="let project of projects" [value]="project.value">
+      {{ project.name }}
+    </mat-option>
+  </mat-select>
+  <button mat-button routerLink="/tasks">Tasks</button>
+  <button mat-button routerLink="/features">Features</button>
+</mat-toolbar>
